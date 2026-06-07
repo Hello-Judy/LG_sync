@@ -1,0 +1,153 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 300px;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 13px;
+}
+
+/* 顶部标题栏 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid #21262d;
+}
+.logo { font-size: 14px; font-weight: 700; }
+.status-dot { font-size: 16px; color: #f85149; }
+.status-dot.connected { color: #3fb950; }
+
+/* 标签页 */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #21262d;
+}
+.tab {
+  flex: 1;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #7d8590;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.tab:hover { color: #e6edf3; }
+.tab.active {
+  color: #e6edf3;
+  border-bottom-color: #388bfd;
+  font-weight: 600;
+}
+
+/* 内容区 */
+.tab-content { display: none; padding: 14px 16px; }
+.tab-content.active { display: flex; flex-direction: column; gap: 10px; }
+
+/* 统计格子 */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.stat {
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 10px 4px;
+  text-align: center;
+}
+.stat span { display: block; font-size: 22px; font-weight: 700; }
+.stat small { font-size: 10px; color: #7d8590; }
+.stat.easy span { color: #3fb950; }
+.stat.med  span { color: #d29922; }
+.stat.hard span { color: #f85149; }
+
+/* 连续天数 */
+.streak-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.streak-val { color: #ff7b72; font-weight: 700; }
+
+/* 看板按钮 */
+.dashboard-btn {
+  display: block;
+  text-align: center;
+  padding: 9px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #388bfd;
+  text-decoration: none;
+  transition: background .15s;
+}
+.dashboard-btn:hover { background: #21262d; }
+
+/* 最近提交列表 */
+.recent-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.recent-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+}
+.prob-id   { color: #7d8590; width: 36px; flex-shrink: 0; }
+.prob-name { flex: 1; }
+.badge {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.badge.easy   { background: #1a2e1a; color: #3fb950; }
+.badge.medium { background: #2e2a1a; color: #d29922; }
+.badge.hard   { background: #2e1a1a; color: #f85149; }
+.empty {
+  text-align: center;
+  color: #7d8590;
+  padding: 20px 0;
+  line-height: 1.9;
+}
+
+/* 设置表单 */
+.field { display: flex; flex-direction: column; gap: 4px; }
+label  { font-size: 11px; color: #7d8590; }
+input  {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 7px 10px;
+  color: #e6edf3;
+  font-size: 12px;
+  outline: none;
+}
+input:focus { border-color: #388bfd; }
+input::placeholder { color: #484f58; }
+.hint { font-size: 10px; color: #484f58; line-height: 1.5; }
+
+button {
+  width: 100%;
+  background: #238636;
+  border: none;
+  border-radius: 6px;
+  padding: 9px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 2px;
+}
+button:hover { background: #2ea043; }
+#saveMsg { font-size: 11px; text-align: center; min-height: 16px; }

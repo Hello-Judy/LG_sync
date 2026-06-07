@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- 顶部标题栏 -->
+    <div class="header">
+      <span class="logo">⚡ LG Sync</span>
+      <span class="status-dot" id="statusDot" title="未配置">●</span>
+    </div>
+
+    <!-- 标签页切换 -->
+    <div class="tabs">
+      <button class="tab active" data-tab="stats">统计</button>
+      <button class="tab"        data-tab="recent">最近</button>
+      <button class="tab"        data-tab="settings">设置</button>
+    </div>
+
+    <!-- 统计页 -->
+    <div class="tab-content active" id="tab-stats">
+      <div class="stat-grid">
+        <div class="stat">
+          <span id="total">0</span>
+          <small>总题数</small>
+        </div>
+        <div class="stat easy">
+          <span id="easy">0</span>
+          <small>简单</small>
+        </div>
+        <div class="stat med">
+          <span id="med">0</span>
+          <small>中等</small>
+        </div>
+        <div class="stat hard">
+          <span id="hard">0</span>
+          <small>困难</small>
+        </div>
+      </div>
+
+      <div class="streak-box">
+        <span>🔥 连续刷题</span>
+        <span class="streak-val" id="streak">0 天</span>
+      </div>
+
+      <a class="dashboard-btn" id="dashboardLink" href="#" target="_blank">
+        打开看板网站 →
+      </a>
+    </div>
+
+    <!-- 最近提交页 -->
+    <div class="tab-content" id="tab-recent">
+      <ul class="recent-list" id="recentList">
+        <li class="empty">还没有同步记录<br/>去 LeetCode 刷一题试试！</li>
+      </ul>
+    </div>
+
+    <!-- 设置页 -->
+    <div class="tab-content" id="tab-settings">
+      <div class="field">
+        <label>GitHub Token</label>
+        <input type="password" id="token"
+               placeholder="ghp_xxxxxxxxxxxx" />
+        <span class="hint">在 GitHub → Settings → Developer settings 里生成，需要 repo 权限</span>
+      </div>
+
+      <div class="field">
+        <label>目标仓库</label>
+        <input type="text" id="repo"
+               placeholder="用户名/leetcode-solutions" />
+      </div>
+
+      <div class="field">
+        <label>看板网站地址（可选）</label>
+        <input type="url" id="website"
+               placeholder="https://用户名.github.io/leetcode-solutions" />
+      </div>
+
+      <button id="saveBtn">保存设置</button>
+      <p id="saveMsg"></p>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
